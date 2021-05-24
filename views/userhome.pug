@@ -1,0 +1,26 @@
+extends base.pug
+append scripts
+  script(src='/static/index.js')
+
+append style
+  style
+    include ../static/userhome.css
+
+block content
+  div#content
+  div#h1
+    h1 Let's document the memories!!!!
+  div#benefits
+    div.benefit
+      img.bimg(src='/static/res/logo3.png' style='mix-blend-mode: multiply;')
+      p.bcontent Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fugit mollitia quas, expedita delectus necessitatibus. Cum reiciendis et voluptatem consectetur ea velit, dolorem eligendi incidunt reprehenderit ab, omnis doloremque amet magnam illo magni ullam.
+    div.benefit
+      img.bimg(src='/static/res/logo3.png' style='mix-blend-mode: multiply;')
+      p.bcontent Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fugit mollitia quas, expedita delectus necessitatibus. Cum reiciendis et voluptatem consectetur ea velit, dolorem eligendi incidunt reprehenderit ab, omnis doloremque amet magnam illo magni ullam.
+    div.benefit
+      img.bimg(src='/static/res/logo3.png' style='mix-blend-mode: multiply;')
+      p.bcontent Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fugit mollitia quas, expedita delectus necessitatibus. Cum reiciendis et voluptatem consectetur ea velit, dolorem eligendi incidunt reprehenderit ab, omnis doloremque amet magnam illo magni ullam.
+  div#contactus
+    div#contact
+      h2 Have any suggestions for us?
+      button#cs Contact Us

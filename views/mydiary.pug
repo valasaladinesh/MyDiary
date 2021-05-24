@@ -1,0 +1,18 @@
+extends base.pug
+append scripts
+  script(src='/static/mydiary.js')
+
+append style
+  style
+    include ../static/mydiary.css
+
+block content
+    div#content
+    section.content
+        form.selectdate(action='/mydiary' method="get")
+            input#calender(type="date" name="date" placeholder="Date" value=date)
+            input.submit(type="submit")
+        textarea#diary(type='text' placeholder='write your diary')= content
+        button#save(onclick='saveContent(document.getElementById("calender").value,document.getElementById("diary").value)') SAVE
+
+    

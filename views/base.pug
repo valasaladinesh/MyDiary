@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title My Diary
+    block scripts
+      script(src='/static/header.js')
+    block style
+    style 
+      include ../static/header.css
+  body
+    header.header
+      div.background
+      div.left
+        img.logoimg(src='/static/res/logo3.png' style='mix-blend-mode: multiply;')
+        h3 My Diary
+      div.mid
+        ul.navbar
+          li
+            a(href='/') Home
+          li
+            a(href=`/mydiary?date=${new Date().toISOString().split('T')[0]}`) My Diary
+          li
+            a(href='/') Contact Us
+      div#dropdown
+        div#right
+          img#loginimg(src='/static/res/login.png')
+          h3#username= login
+          ul#profile
+            li#li1
+              a(href=`/mydiary?date=${new Date().toISOString().split('T')[0]}`) My Diary
+            li#li2
+              a(href='/logout') Logout
+    block content
+    footer#foot
+      p#copyright CopyRight © 2021 MyDiary.com | All rights reserved

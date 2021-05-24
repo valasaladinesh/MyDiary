@@ -1,0 +1,42 @@
+extends base.pug
+append scripts
+  script(src='/static/unauthindex.js')
+
+append style
+  style
+    include ../static/home.css
+
+block content
+  div#content
+  if !success
+    script alert("Account is already registered")
+  div#nologin.content
+    div.container
+      div.register
+        a#registernow(href='#' onclick="loadRegistration()") Register Now
+        a#login(href='#' onclick="loadLogin()") Login
+      div.registerform#registerform
+        form(action="/register" method="post")
+          div.forminputs
+            input.forminputs(type="text" id="name" name="name" placeholder="Enter your name" required)
+          div.forminputs
+            input.forminputs(type="email" id="email" name="email" placeholder="Enter your email" required)
+          div.forminputs
+            input.forminputs(type="phone" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" required)
+          div.forminputs
+            input.forminputs(type="password" id="password" name="password" placeholder="Enter your password" required)
+          button#registerbtn(type="submit") Register
+      div.registerform#loginform
+        form(action="/login" method="post")
+          div.forminputs
+            input.forminputs(type="email" id="loginemail" name="email" placeholder="Enter your email")
+          div.forminputs
+            input.forminputs(type="password" id="loginpassword" name="password" placeholder="Enter your password")
+          button#loginbtn(type="submit") Login
+    div.benefits
+      p Benefits of maintaining a Diary
+      ul
+        li Keep your thoughts organized.
+        li Improve your writing.
+        li Set and achieve your goals.
+        li Record ideas on-the-go.
