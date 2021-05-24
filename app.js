@@ -159,6 +159,15 @@ app.post('/login'
     }
 )
 
+app.get('/contactus', (req, res) => {
+    console.log("CONTACT US");
+    if (req.session.loggedIn) {
+        res.status(200).render('contactus.pug', {login:req.session.username.replace("@gmail.com","")});
+    } else {
+        res.redirect("/");
+    }
+})
+
 app.get('/logout', (req, res) => {
     req.session.destroy((err) => { })
     res.redirect('/');

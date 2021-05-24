@@ -1,6 +1,6 @@
 extends base.pug
 append scripts
-  script(src='/static/index.js')
+  script(src='/static/userhome.js')
 
 append style
   style
@@ -23,4 +23,5 @@ block content
   div#contactus
     div#contact
       h2 Have any suggestions for us?
-      button#cs Contact Us
+      a#cs(href='/contactus') Contact Us
+      //- button#cs(onclick='contactus()') Contact Us
