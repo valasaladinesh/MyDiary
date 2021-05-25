@@ -1,0 +1,48 @@
+Tools used:
+Visual Studio
+Mongod
+
+
+Front end:
+HTML, CSS, plain JavaScript
+Template Engine - PUG
+
+Backend:
+Node js Express framework
+
+Databse:
+Mongo db
+
+
+Things Learnt:
+FRONTEND:
+1. Template Inheritance - stack up css or JS files using "append".
+2. Need to use "pre - whitespace:pre-line" tag for formatted text. Preserves white spaces.
+3. display:block -> center items using "verticalalign", "text-align", "margin:10px auto with width declared".
+4. display:flex  -> center using "justify-content", "align-items".
+5. position:fixed vs position: absolute vs position:relative.
+6. list-style: none to remove li dots
+7. text-decoration: none to remove underline for a tag
+8. form inputs are sent based on "name" property.
+9. we can use if condition in pug - check home.pug
+10. before pseudo selector with "content", "background", "position:absolute", "z-index" to set a background for an item and adjust opacity.
+11. .benefits>p -> immediate p in .benefit class
+12. can directly use "document.getElementById("calender").value" to get the value of an element and pass it as onclick arguements
+
+
+BACKEND:
+1. used express, espress-session, path, mongoose, body-parser.
+2. app.use(session({secret: 'Keep it secret',name: 'uniqueSessionID',saveUninitialized: false})) - to set up a session to store login information.
+3. app.use(bodyparser.json()) to parse post request JSON data.
+4. We can send paraments back to frontend using extra json parameters alongside "render".
+5. listCollections -> to check if a collection already exists.
+6. res.redirect("/") -> to redirect the request.
+7. findOneAndUpdate and findOne
+8. on logout, do a session destroy - req.session.destroy((err) => { })
+
+
+
+Things to explore:
+1. Button click doesn't have any effect on res.render()
+2. Tried "fecth" to make service calls but the res.render() didn't work.
+
