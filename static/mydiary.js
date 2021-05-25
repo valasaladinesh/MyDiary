@@ -25,9 +25,6 @@ function saveContent(value, content) {
 
 
 function saveContentAsync(value, content) {
-  console.log("my ocntent");
-  console.log(`${value}`);
-  console.log(`${content}`);
   let data = {
     date: value,
     content: content
@@ -45,11 +42,4 @@ function saveContentAsync(value, content) {
   
     console.log(content);
   })();
-  //console.log("Before save post - ", JSON.stringify(data));
-  //var data = `{"date":"${value}","content":"${content}"}`;
-}
-
-
-function dummy(){
-    console.log("DUMMT called");
 }
