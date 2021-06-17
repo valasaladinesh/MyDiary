@@ -2,6 +2,7 @@ doctype html
 html
   head
     title My Diary
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     block scripts
       script(src='/static/header.js')
     block style
@@ -26,9 +27,9 @@ html
           img#loginimg(src='/static/res/login.png')
           h3#username= login
           ul#profile
-            li#li1
+            li#li1.liitem
               a(href=`/mydiary?date=${new Date().toISOString().split('T')[0]}`) My Diary
-            li#li2
+            li#li2.liitem
               a(href='/logout') Logout
     block content
     footer#foot

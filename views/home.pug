@@ -10,6 +10,8 @@ block content
   div#content
   if !success
     script alert("Account is already registered")
+  if !registered
+    script alert("Account is not registered")
   div#nologin.content
     div.container
       div.register
@@ -24,7 +26,8 @@ block content
           div.forminputs
             input.forminputs(type="phone" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" required)
           div.forminputs
-            input.forminputs(type="password" id="password" name="password" placeholder="Enter your password" required)
+            input.forminputs(type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" placeholder="Enter your password" required)
+          label#pwd.invalid(for="password") Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters 
           button#registerbtn(type="submit") Register
       div.registerform#loginform
         form(action="/login" method="post")

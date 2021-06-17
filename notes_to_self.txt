@@ -27,7 +27,8 @@ FRONTEND:
 9. we can use if condition in pug - check home.pug
 10. before pseudo selector with "content", "background", "position:absolute", "z-index" to set a background for an item and adjust opacity.
 11. .benefits>p -> immediate p in .benefit class
-12. can directly use "document.getElementById("calender").value" to get the value of an element and pass it as onclick arguements
+12. can directly use "document.getElementById("calender").value" to get the value of an element and pass it as onclick arguements.
+13. include meta tag with viewport to make the Media Queries work. 
 
 
 BACKEND:

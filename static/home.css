@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    margin: 0px;
 }
 #li2{
     display:none;
@@ -12,7 +13,7 @@
     top: 0px;
     left: 0px;
     background: url('/static/res/background.jpg') no-repeat center center/cover;
-    position:absolute;
+    position:fixed;
     z-index: -1;
     opacity: 0.5;
 }
@@ -23,7 +24,7 @@
     margin-left: 25px;
     padding-bottom: 10px;
     background-color: black;
-    width: 30%;
+    width: 350px;
     border-radius: 20px;
     display: inline;
 }
@@ -33,7 +34,7 @@
     flex-direction: column;
     justify-content: center;
     width: 60%;
-    padding-left: 40px;
+    padding-left: 3%;
     margin: auto;
     margin-top: 175px;
     margin-left: 25px;
@@ -79,6 +80,35 @@
     font-weight:bolder;
     text-decoration: none;
 }
+
+label{
+    display: none;
+    color: red;
+    margin: 0px 50px;
+}
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: rgb(24, 207, 24);
+}
+  
+.valid:before {
+    position: relative;
+    content: "✔";
+    padding-right: 10px;
+}
+  
+  /* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+  
+.invalid:before {
+    position: relative;
+    content: "✖";
+    padding-right: 10px;
+}
+
+
 #login{
     border-top-right-radius: 20px;
 }
@@ -123,4 +153,50 @@
     align-items: flex-start;
     justify-content: center;
     min-height: 80vh;
+}
+
+@media (max-width: 700px){
+
+    #nologin{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        min-height: 80vh;
+    }
+    .benefits{
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        padding-left: 3%;
+        margin: auto;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .benefits>p{
+        font-size: 1.4rem;
+    }
+    .benefits>ul{
+        font-size: 1.2rem;
+    }
+
+    .container{
+        /* border: 2px solid red; */
+        margin-top: 50px;
+        margin-left: 1%;
+        padding-bottom: 10px;
+        background-color: black;
+        width: 60%;
+        border-radius: 20px;
+        display: inline;
+    }
+}
+
+@media (max-width: 500px){
+    .container{
+        width: 75%;
+    }
 }

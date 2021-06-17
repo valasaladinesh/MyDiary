@@ -30,35 +30,38 @@
 }
 
 #benefits{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    width: 90%;
+    display: block;
+    margin: auto;
+    text-align: center;
     align-items: center;
+    margin-top: 200px;
+    margin-bottom: 50px;
 }
 
 .benefit{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content:space-between;
     align-items: center;
-    width: 27%;
+    width: 300px;
     height: 30vh;
     border: 2px solid black;
     border-radius: 5px;
-    margin: 150px auto;
-    margin-bottom: 50px;
+    margin: 30px;
     padding: 10px;
+    /* background: #fff0e9; */
+    background: rgb(219, 218, 200);
 }
 
 pre{
     white-space: pre-line;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .bimg{
     width: 100px;
     height: 100px;
-    z-index: -1;
 }
 
 .bcontent{
@@ -104,4 +107,94 @@ pre{
 
 h2{
     font-size: xx-large;
+}
+
+@media (min-width:700px) and (max-width: 800px){
+
+    #benefits{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        margin-bottom: 50px;
+    }
+
+    .benefit{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        align-items: center;
+        width: 75%;
+        height: 30vh;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 700px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    #h1{
+        height: 35vh;
+    }
+
+    #benefits{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        margin-bottom: 50px;
+    }
+
+    .benefit{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        align-items: center;
+        width: 75%;
+        height: 30vh;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    #h1{
+        height: 35vh;
+    }
+
+    #benefits{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        margin-bottom: 50px;
+    }
+
+    .benefit{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        align-items: center;
+        width: 85%;
+        height: 30vh;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
 }

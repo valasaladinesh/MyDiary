@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 *{
     box-sizing: border-box;
     margin: 0px;
@@ -19,20 +21,28 @@ header::before{
     z-index: -1;
     opacity: 0.5;
 }*/
+a, h3, p, li, input, button{
+    /* font-family: 'Indie Flower', 'cursive'; */
+    font-family: 'Patrick Hand', cursive;
+}
 header{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px auto;
     margin-top: 40px;
+    position: sticky;
+    z-index: 10;
 }
 .background{
     position: fixed;
     width: 100vw;
     height: 80px;
-    background: rgb(227 142 37);
+    /* background: rgb(227 142 37); */
+    background: rgb(192,190,166);
     top: 0px;
 }
+
 
 /* navbar styling */
 .navbar{
@@ -47,39 +57,42 @@ header{
     font-size: large;
     font-weight:bolder;
     text-decoration: none;
+    font-family: 'Righteous', cursive;
 }
 li a{
     color: rgb(25, 22, 56);
     text-decoration: none;
+    font-family: 'Righteous', cursive;
 }
 .navbar li a:hover{
     color: rgb(230, 129, 62);
 }
 .mid{
-    width: 70%;
+    width: 75%;
     display:block;
     margin: auto;
     position: fixed;
     text-align: center;
 }
 .logoimg{
-    width: 50%;
-    height: 50%;
+    width: 40px;
+    height: 40px;
     display: block;
     margin: auto;
 }
 .left{
     position: fixed;
-    top: 0px;
+    top: 2px;
     left: 10px;
-    width: 8%;
+    width: 10%;
     display: block;
     align-items: center;
+    text-align: center;
     margin-top: 5px;
 }
 .left h3{
-    padding: 5px 10px 10px 5px;
-    width: 80%;
+    padding: 7px 0px;
+    font-size: 100%;
     font-weight: bold;
     display: block;
     margin: auto;
@@ -102,32 +115,42 @@ li a{
 #right{
     position: fixed;
     top: 0px;
-    width: 10%;
-    height: 10%;
+    width: 15%;
+    height: 15%;
     margin: 0px auto;
     margin-top: 30px;
     text-align: center;
 }
 #profile{
     list-style: none;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
     margin-top: 10px;
     display: none;
 }
 
 #profile li{
     width: 100%;
-    margin: 10px auto;
+    margin: 0px;
     padding: 10px;
 }
+
+.liitem:hover{
+    background: grey;
+    border-radius: 5px;
+}
+
 #right:hover #profile{
     display: block;
     position: relative;
     background: white;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
     border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 20px;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
 }
 
 #loginimg{
@@ -146,6 +169,7 @@ li a{
 #foot{
     text-align: center;
     background: black;
+    bottom: 0px;
     margin: 0px;
     padding: 10px;
     margin-top: 50px;
@@ -153,4 +177,89 @@ li a{
 
 #copyright{
     color: white;
+}
+
+
+@media (max-width: 420px){
+    .left h3{
+        font-size: small;
+    }
+}
+
+@media (min-width: 420px) and (max-width: 700px){
+    .left h3{
+        font-size: medium;
+    }
+}
+
+@media (max-width: 700px){
+    .navbar li{
+        display:block;
+    }
+
+    .navbar li a{
+        font-size: medium;
+    }
+
+    .navbar{
+        padding-left: 0px;
+    }
+
+    .background{
+        position: fixed;
+        width: 100vw;
+        height: 100px;
+    }
+
+    header{
+        height: 100px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .left{
+        position: fixed;
+        left: 10px;
+        width: 16%;
+        margin: 0px auto;
+        margin-top: 20px;
+        display: block;
+        align-items: center;
+    }
+    .logoimg{
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin: auto;
+    }
+    .left h3{
+        padding: 10px 0px;
+        width: 100%;
+        font-size: small;
+        font-weight: bold;
+        display: block;
+        margin: auto;
+    }
+
+    .mid{
+        top: 5px;
+    }
+
+    #profile li a{
+        font-size: small;
+    }
+    #profile li{
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    #right:hover #profile{
+        display: block;
+        position: relative;
+        background: white;
+        padding-right: 0px;
+        padding-left: 0px;
+        border-radius: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }

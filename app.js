@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
     if (req.session.loggedIn) {
         res.status(200).render('userhome.pug', { success: true, login:req.session.username.replace("@gmail.com","")});
     } else {
-        res.status(200).render('home.pug', { success: true, login:'Login'});
+        res.status(200).render('home.pug', { success: true, registered:true, login:'Login'});
     }
 })
 
@@ -104,7 +104,7 @@ app.post('/save', (req, res) => {
         })
         res.status(200).send("Saved Successfully");
     }else{
-        res.status(200).render('home.pug',{success:true, login:"Login"});
+        res.status(200).render('home.pug',{success:true, registered:true, login:"Login"});
     }
     //res.status(200).render('userhome.pug',{success:true});
 })
@@ -125,7 +125,7 @@ app.post('/register', (req, res) => {
             console.log('data saved out');
             res.redirect(307,'/login');
         } else {
-            res.status(200).render('home.pug', { success: false, login:"Login" });
+            res.status(200).render('home.pug', { success: false, registered:true, login:"Login" });
             //res.status(200).send(alert('User already registered!!'));
         }
     });
@@ -145,8 +145,9 @@ app.post('/login'
                 next()
 
             } else {
-                res.sendStatus(401)
-                //res.status(200).send(alert('User already registered!!'));
+                // res.sendStatus(401)
+                res.status(200).render('home.pug', { success: true, registered:false, login:'Login' });
+                // res.status(200).send(alert('User already registered!!'));
             }
         });
 
