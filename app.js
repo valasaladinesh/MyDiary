@@ -55,8 +55,8 @@ app.get('/', (req, res) => {
 app.get('/mydiary', (req, res) => {
     if (req.session.loggedIn) {
         db.db.listCollections({name:req.session.username.replace("@gmail.com","")}).toArray(function(err, collinfo) {
-            console.log('err -', err);
-            console.log('collinfo -', collinfo.length);
+            // console.log('err -', err);
+            // console.log('collinfo -', collinfo.length);
             if(collinfo.length>0){
                 var UserEntry = mongoose.model(collinfo[0].name, UserSchema,collinfo[0].name);
                 UserEntry.findOne({ date: req.query.date}, function (err, doc) {
@@ -110,10 +110,10 @@ app.post('/save', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
-    console.log(`name ${req.body.name}`);
+    // console.log(`name ${req.body.name}`);
     Entry.find({ email: req.body.email }, function (err, docs) {
-        console.log('Errh ', err);
-        console.log('docs length ', docs.length);
+        // console.log('Errh ', err);
+        // console.log('docs length ', docs.length);
         if (docs.length < 1) {
             console.log('Error if');
             var entry = new Entry(req.body);
@@ -135,12 +135,12 @@ app.post('/register', (req, res) => {
 app.post('/login'
     , bodyparser.urlencoded()
     , (req, res, next) => {
-        console.log("login req body ", req.body);
+        // console.log("login req body ", req.body);
         Entry.find({ email: req.body.email, password: req.body.password }, function (err, docs) {
-            console.log(`err ${err}`);
-            console.log('docs length ', docs.length);
+            // console.log(`err ${err}`);
+            // console.log('docs length ', docs.length);
             if (docs.length == 1) {
-                console.log(`${docs.name}`);
+                // console.log(`${docs.name}`);
                 res.locals.username = req.body.email;
                 next()
 
@@ -155,7 +155,7 @@ app.post('/login'
     , (req, res) => {
         req.session.loggedIn = true;
         req.session.username = res.locals.username;
-        console.log(req.session);
+        // console.log(req.session);
         res.status(200).render('userhome.pug', { success: true, login:req.session.username.replace("@gmail.com","") });
     }
 )
